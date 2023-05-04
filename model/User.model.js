@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
     date:{type:String,required:true},
     year:{type:String,required:true},
     likedSongs:{type:[String],required:[]},
-    playlist:{type:[String],required:[]},
+    playlists:{type:[String],required:[]},
     isAdmin:{type:Boolean,default:false},
 });
 

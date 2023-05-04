@@ -13,13 +13,13 @@ const playlistSchema = new mongoose.Schema({
 })
 
 const validate =(playlist)=>{
-    const schema =Joi.object({
-        name:Joi.string().required(),
-        user:Joi.string().required(),
-        desc:Joi.string().allow(""),
-        songs:Joi.string().items(Joi.string()),
-        img:Joi.string().allow(""),
-    })
+    const schema = Joi.object({
+		name: Joi.string().required(),
+		user: Joi.string().required(),
+		desc: Joi.string().allow(""),
+		songs: Joi.array().items(Joi.string()),
+		img: Joi.string().allow(""),
+	});
     return schema.validate(playlist);
 };
 
